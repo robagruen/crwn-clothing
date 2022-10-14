@@ -1,3 +1,5 @@
+import './scss/App.scss';
+
 import CategoryDirectory from './components/CategoryDirectory/CategoryDirectory.component';
 
 function App() {
