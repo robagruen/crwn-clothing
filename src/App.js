@@ -1,51 +1,36 @@
-import './categories.styles.scss';
+import CategoryDirectory from './components/CategoryDirectory/CategoryDirectory.component';
 
 function App() {
-
   const categories = [
     {
-      id: 0,
-      title: 'Hats',
-      subtitle: 'Shop Now'
+      "id": 1,
+      "title": "hats",
+      "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
     },
     {
-      id: 1,
-      title: 'Jackets',
-      subtitle: 'Shop Now'
+      "id": 2,
+      "title": "jackets",
+      "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
     },
     {
-      id: 2,
-      title: 'Sneakers',
-      subtitle: 'Shop Now'
+      "id": 3,
+      "title": "sneakers",
+      "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
     },
     {
-      id: 3,
-      title: 'Women',
-      subtitle: 'Shop Now'
+      "id": 4,
+      "title": "womens",
+      "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
     },
     {
-      id: 4,
-      title: 'Men',
-      subtitle: 'Shop Now'
+      "id": 5,
+      "title": "mens",
+      "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
     }
   ];
 
   return (
-    <div className="categories-container">
-      {
-        categories.map((category) => (
-          <div key={ category.id } className="category-container">
-            <div className="background-image">
-              {/* <img /> */}
-            </div>
-            <div className="category-body-container">
-              <h2>{ category.title }</h2>
-              <p>{ category.subtitle }</p>
-            </div>
-          </div>
-        ))
-      }  
-    </div>
+    <CategoryDirectory categories={ categories } />
   );
 }
 
