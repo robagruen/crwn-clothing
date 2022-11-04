@@ -1,22 +1,23 @@
-import { useContext } from 'react';
+import { useContext } from "react";
 
-import { ReactComponent as ShoppingIcon } from './../../assets/svg/shopping-bag.svg'
+import { ReactComponent as ShoppingIcon } from "./../../assets/svg/shopping-bag.svg";
 
-import { CartContext } from './../../contexts/cart.context';
+import { CartContext } from "./../../contexts/cart.context";
 
-import './CartIcon.styles.scss';
+import "./CartIcon.styles.scss";
 
 const CartIcon = () => {
-  const { cartDropdownToggled, setCartDropdownToggled } = useContext(CartContext);
+  const { cartDropdownToggled, setCartDropdownToggled, cartItemCount } =
+    useContext(CartContext);
 
   const toggleCartDropdown = () => setCartDropdownToggled(!cartDropdownToggled);
 
   return (
-    <div className="cart-icon-container" onClick={ toggleCartDropdown }>
+    <div className="cart-icon-container" onClick={toggleCartDropdown}>
       <ShoppingIcon className="shopping-icon" />
-      <span className="item-count">0</span>
+      <span className="item-count">{cartItemCount}</span>
     </div>
-  )
-}
+  );
+};
 
 export default CartIcon;
