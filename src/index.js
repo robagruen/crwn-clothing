@@ -11,6 +11,7 @@ import { CartProvider } from "./contexts/cart.context";
 import reportWebVitals from "./reportWebVitals";
 
 import "./scss/index.scss";
+import "./scss/normalize.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

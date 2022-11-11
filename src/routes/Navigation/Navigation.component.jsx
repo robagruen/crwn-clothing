@@ -1,8 +1,8 @@
 import { Fragment, useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
-import CartIcon from './../../components/CartIcon/CartIcon.component';
-import CartDropdown from './../../components/CartDropdown/CartDropdown.component';
+import CartIcon from "./../../components/CartIcon/CartIcon.component";
+import CartDropdown from "./../../components/CartDropdown/CartDropdown.component";
 
 import { ReactComponent as CrwnLogo } from "./../../assets/svg/logo.svg";
 import { UserContext } from "./../../contexts/user.context";
@@ -26,17 +26,21 @@ const Navigation = () => {
           <Link className="nav-link" to="/shop">
             SHOP
           </Link>
-          {currentUser ? (
-            <a href="#" className="nav-link" onClick={ signOutUser }>SIGN OUT</a>
-          ) : (
-            <Link className="nav-link" to="/auth">
-              SIGN IN
-            </Link>
-          )}
+          {currentUser
+            ? (
+              <a href="#" className="nav-link" onClick={signOutUser}>
+                SIGN OUT
+              </a>
+            )
+            : (
+              <Link className="nav-link" to="/auth">
+                SIGN IN
+              </Link>
+            )}
 
           <CartIcon />
         </div>
-        { cartDropdownToggled && <CartDropdown /> }
+        {cartDropdownToggled && <CartDropdown />}
       </header>
       <Outlet />
     </Fragment>

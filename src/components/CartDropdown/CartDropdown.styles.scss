@@ -10,6 +10,7 @@
   top: 90px;
   right: 40px;
   z-index: 5;
+  flex-basis: calc(50% - 10px);
 
   .empty-message {
     font-size: 18px;
